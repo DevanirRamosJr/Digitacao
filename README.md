@@ -1,6 +1,6 @@
 # Digitação
 
-Programa de digitação, ainda não está finalizado.
+Programa de digitação, V 1.0 finalizada.
 ---
 Para a primeira versão:
 ---
