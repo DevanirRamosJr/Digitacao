@@ -11,3 +11,5 @@ Para a primeira versão:
 - Apenas 1 modo.
 
 Main Branch contém a versão funcional mais recente.
+
+Para criar suas próprias palavras crie um arquivo .txt e salve como "br-utf8".
