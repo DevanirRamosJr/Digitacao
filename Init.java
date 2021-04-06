@@ -1,6 +1,5 @@
 package app;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -78,7 +77,6 @@ public class Init extends JFrame {
 		Binit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				cl.show(panel_main, "2");
-				//panel_game.add(Bvoltar);
 				panel_game.field_focus();
 			}
 		});
@@ -88,7 +86,6 @@ public class Init extends JFrame {
 				int keyCode = e.getKeyCode();
 		        if (keyCode == KeyEvent.VK_ENTER) {
 					cl.show(panel_main, "2");
-					//panel_game.add(Bvoltar);
 					panel_game.field_focus();
 		        }
 	        }
@@ -154,6 +151,7 @@ public class Init extends JFrame {
 		Bvoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				cl.show(panel_main, "0");
+				Bvoltar.setBounds(10, 10, 65, 23);
 				Binit.requestFocus();
 			}
 		});
@@ -163,6 +161,7 @@ public class Init extends JFrame {
 				int keyCode = e.getKeyCode();
 		        if (keyCode == KeyEvent.VK_ENTER) {
 					cl.show(panel_main, "0");
+					Bvoltar.setBounds(10, 10, 65, 23);
 					Binit.requestFocus();
 		        }
 	        }
@@ -180,5 +179,20 @@ public class Init extends JFrame {
 		Bvoltar.setFont(new Font("Times New Roman", Font.BOLD, 10));
 		Bvoltar.setBounds(10, 10, 65, 23);
 		panel_info.add(Bvoltar);
+		
+		String info = ("Ao iniciar você terá que digitar \"Palavra\" de exemplo, quando ela for digitada a pontuação começa."
+				+ "\n\nCompletando uma palavra você ganha pontos.\nTambém é mostrado a quantidade de palavras digitadas."
+				+ "\n\nPode usar \"Tab\" e \"Enter\" para navegação.");
+		JLabel Linfo = new JLabel(MultilineLabel(info));
+		Linfo.setHorizontalAlignment(SwingConstants.LEFT);
+		Linfo.setFont(new Font("Times New Roman", Font.PLAIN, 23));
+		Linfo.setBounds(20, 72, 440, 248);
+		panel_info.add(Linfo);
+		
+	}
+	
+	public static String MultilineLabel(String orig)
+	{
+	    return "<html>" + orig.replaceAll("\n", "<br>") + "</html>";
 	}
 }

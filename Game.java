@@ -11,8 +11,6 @@ import javax.swing.SwingUtilities;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -25,7 +23,6 @@ import java.util.Random;
 public class Game extends JPanel {
 	private JTextField Tinput;
 	private int len;
-	private int erro;
 	private int score;
 	private int init;
 
@@ -37,17 +34,17 @@ public class Game extends JPanel {
 		Color VERY_LIGHT_RED = new Color(255,102,102);
 		init = 0;
 		
-		JLabel Lqtd = new JLabel("Score:");
-		Lqtd.setFont(new Font("Times New Roman", Font.BOLD, 26));
-		Lqtd.setBounds(0, 11, 71, 33);
-		add(Lqtd);
+		JLabel Lpontos = new JLabel("Score:");
+		Lpontos.setFont(new Font("Times New Roman", Font.BOLD, 26));
+		Lpontos.setBounds(5, 11, 71, 33);
+		add(Lpontos);
 		
 		JLabel Lquant = new JLabel("Quant:");
 		Lquant.setFont(new Font("Times New Roman", Font.BOLD, 26));
 		Lquant.setBounds(340, 11, 86, 33);
 		add(Lquant);
 		
-		JLabel Lq = new JLabel("00");
+		JLabel Lq = new JLabel("0");
 		Lq.setHorizontalAlignment(SwingConstants.CENTER);
 		Lq.setFont(new Font("Times New Roman", Font.PLAIN, 26));
 		Lq.setBounds(425, 12, 41, 33);
@@ -56,20 +53,20 @@ public class Game extends JPanel {
 		JLabel Lscore = new JLabel("0");
 		Lscore.setHorizontalAlignment(SwingConstants.CENTER);
 		Lscore.setFont(new Font("Times New Roman", Font.PLAIN, 26));
-		Lscore.setBounds(75, 12, 71, 33);
+		Lscore.setBounds(75, 12, 80, 33);
 		add(Lscore);
 		
 		JLabel Lword = new JLabel("Palavra");
 		Lword.setHorizontalAlignment(SwingConstants.CENTER);
 		Lword.setFont(new Font("Times New Roman", Font.BOLD, 34));
-		Lword.setBounds(0, 102, 470, 48);
+		Lword.setBounds(0, 102, 480, 48);
 		add(Lword);
 		Lword.setVisible(false);
 		
 		JLabel candy = new JLabel("<html>Palavra</html>");
 		candy.setHorizontalAlignment(SwingConstants.CENTER);
 		candy.setFont(new Font("Times New Roman", Font.BOLD, 34));
-		candy.setBounds(0, 101, 470, 48);
+		candy.setBounds(0, 101, 480, 48);
 		add(candy);
 		
 		ArrayList<String> coisas = new ArrayList<String>();
@@ -202,4 +199,5 @@ public class Game extends JPanel {
 	public void field_focus() {
 		Tinput.requestFocus();
 	}
+	
 }
